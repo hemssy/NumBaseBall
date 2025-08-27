@@ -17,13 +17,11 @@ ABS 함수를 사용해서, 각 자리의 숫자와 위치가 모두 맞으면 �
 ### OS
 <img src="https://img.shields.io/badge/macOS-000000.svg?style=for-the-badge&logo=apple&logoColor=white">
 
-### Communication
-<img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white">
-
 ---
 ## 실행 화면
 ---
 ## 구현 포인트
+
 
 
 
