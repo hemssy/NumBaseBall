@@ -3,7 +3,7 @@ name: "(필수/도전) 기능 Lv? 추가"
 about: 기능추가 이슈 템플릿
 title: ''
 labels: ''
-assignees: ''
+assignees: hemssy
 
 ---
 
