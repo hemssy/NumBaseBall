@@ -1,3 +1,3 @@
 let game = BaseballGame()
-game.start()
+game.startMenu()
 
