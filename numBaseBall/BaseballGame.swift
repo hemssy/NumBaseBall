@@ -10,7 +10,7 @@ class BaseballGame {
         // 정답 만들고 저장해둠
         answer = makeAnswer()
 
-        // print("정답: \(answer[0]) \(answer[1]) \(answer[2])")
+        // print("정답: \(answer[0]) \(answer[1]) \(answer[2])") // 디버깅용
 
         var attempt = 0
 
@@ -28,12 +28,12 @@ class BaseballGame {
             let guess = parseGuess(line)
 
             if guess.count != 3 {
-                print("잘못된 입력입니다. 1~9 중 서로 다른 숫자 3개를 공백없이 입력해주세요.")
+                print("잘못된 입력입니다. 0~9 중 서로 다른 숫자 3개를 공백없이 입력해주세요. 첫 자리는 0이 될 수 없습니다.")
                 continue
             }
 
             // 판정
-            let (strike, ball) = abs(guess: guess)
+            let (strike, ball) = ABS(guess: guess)
 
             if strike == 0 && ball == 0 {
                 print("Nothing")
@@ -49,16 +49,20 @@ class BaseballGame {
         }
     }
 
-    // 1~9 사이의 서로 다른 세 숫자로 정답 생성
+    // 첫자리는 1~9,나머지는 0~9 사이의 서로 다른 세 숫자로 정답 생성
     func makeAnswer() -> [Int] {
         var answerArr: [Int] = []
         
+        // 첫 자리: 1~9 공백없이 넣기
+        let first = Int.random(in: 1...9)
+        answerArr.append(first)
+
+        
+        // 두번째,세번째 자리: 0~9 공백없이 넣기
         while answerArr.count < 3 {
-            let num = Int.random(in: 1...9)
+            let num = Int.random(in: 0...9)
             
-            if (answerArr.count == 0) ||
-               (answerArr.count == 1 && answerArr[0] != num) ||
-               (answerArr.count == 2 && answerArr[0] != num && answerArr[1] != num) {
+            if !answerArr.contains(num) {
                 answerArr.append(num)
             }
         }
@@ -72,25 +76,31 @@ class BaseballGame {
         guard text.count == 3 else { return [] }
 
         var numbers: [Int] = []
+        var index = 0
 
         for t in text {
             // 숫자 아니면 안됨
             guard let num = Int(String(t)) else { return [] }
 
-            // 1~9 범위 벗어나면 안됨
-            if num < 1 || num > 9 { return [] }
+            // 0~9 범위 벗어나면 안됨
+            if num < 0 || num > 9 { return [] }
+            
+            // 첫 자리 0 안됨
+            if index == 0 && num == 0 { return [] }
 
             // 중복이면 안됨
             if numbers.contains(num) { return [] }
 
             numbers.append(num)
+            
+            index += 1
         }
 
         return numbers
     }
 
-    // 공 판정은 abs가 합니다!
-    func abs(guess: [Int]) -> (Int, Int) {
+    // 공 판정은 ABS가 합니다!
+    func ABS(guess: [Int]) -> (Int, Int) {
         var strike = 0
         var ball = 0
 
