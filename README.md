@@ -19,7 +19,7 @@
 .
 ```
 
-코드 뼈대는 다음과 같습니다.
+주어진 코드 뼈대는 다음과 같다.
 
 ```swift
 class 혹은 struct {
@@ -47,18 +47,19 @@ class 혹은 struct {
 }
 ```
 
-## 변환점
+## 레벨업 요소
 
-Lv4에서는 기본적인 메뉴 구성을 만들었다면, Lv5에서는 게임 기록 보기 기능(case 2번) 을 새로 구현했다.
+Lv4에서는 기본적인 메뉴 구성을 만들었다면, Lv5에서는 게임 기록 보기 기능(```case``` 2번) 을 새로 구현했다.
 
-class BaseballGame 상단에 recordManager 객체를 생성하고, 별도의 RecordManager 클래스를 추가하였다. 이 클래스는 게임 시도 횟수를 저장하는 add() 메소드와, 저장된 기록을 출력하는 showRecords() 메소드로 구성된다.
+```class BaseballGame``` 상단에 ```recordManager``` 객체를 생성하고, 별도의 ```RecordManager``` 클래스를 추가하였다. 이 클래스는 게임 시도 횟수를 저장하는 ```add()``` 메소드와, 저장된 기록을 출력하는 ```showRecords()``` 메소드로 구성된다.
 
 
 ## 해결과정
 
-startGame() 함수에서 attempt 변수를 통해 매 시도마다 카운트가 올라가는 것을 확인했다. 게임이 종료되면 attempt를 Int 타입으로 반환하도록 수정하였다.
+```startGame()``` 함수에서 ```attempt``` 변수를 통해 매 시도마다 카운트가 올라가는 것을 확인했다. 게임이 종료되면 ```attempt```를 ```Int``` 타입으로 반환하도록 수정하였다.
 
-메뉴 case 1번에서 let trialCount = startGame()을 호출해 반환값을 받아오고, 이어서 recordManager.add(trialCount: trialCount)로 기록을 저장하도록 만들었다.
+메뉴 ```case``` 1번에서 ```let trialCount = startGame()```을 호출해 반환값을 받아오고, 이어서 ```recordManager.add(trialCount: trialCount)```로 기록을 저장하도록 만들었다.
 
 
-showRecords() 함수는 게임 기록이 전혀 없는 경우와, 최소 1회 이상 기록이 존재하는 경우를 구분하여 출력하도록 했다. records 배열을 빈 배열로 초기화한 뒤, 반복문을 통해 index를 증가시키며 각 게임의 시도 횟수를 보여주도록 작성했다. 이때 게임 번호는 index + 1, 시도 횟수는 records[index]를 이용하여 출력한다.
+```showRecords()``` 함수는 게임 기록이 전혀 없는 경우와, 최소 1회 이상 기록이 존재하는 경우를 구분하여 출력하도록 했다. ```records``` 배열을 빈 배열로 초기화한 뒤, 반복문을 통해 ```index```를 증가시키며 각 게임의 시도 횟수를 보여주도록 작성했다. 이때 게임 번호는 ```index + 1```, 시도 횟수는 ```records[index]```를 이용하여 출력한다.
+
