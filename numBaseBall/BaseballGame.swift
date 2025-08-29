@@ -1,10 +1,11 @@
 import Foundation
 
 class BaseballGame {
-    private var answer: [Int] = []
+    private var answer: [Int] = [ ]
     private var nowRunning = true
+    private let recordManager = RecordManager()
     
-    
+    // startMenu 함수: 메뉴에서 숫자 선택
     func startMenu() {
         
         while nowRunning {
@@ -16,28 +17,27 @@ class BaseballGame {
             
             // 사용자 입력받기
             guard let line = readLine() else {
-                print("잘못된 입력입니다. 다시 입력해주세요.")
+                print("잘못된 입력입니다. 다시 입력해주세요. \n")
                 continue
             }
             
-            let input = line.trimmingCharacters(in: .whitespacesAndNewlines)  // 앞뒤 공백제거 처리! 한자리숫자여서 괜찮음
+            let input = line.trimmingCharacters(in: .whitespacesAndNewlines)
             
             // === switch문으로 입력값 처리 ===
             switch input {
             case "1":
-                // 기존 게임함수
-                startGame()
+                let trialCount = startGame()
+                recordManager.add(trialCount: trialCount)
                 
             case "2":
-                // 게임 기록 보기 함수 들어갈 예정
-                break
+                recordManager.showRecords()
                 
             case "3":
                 // 게임종료 함수 들어갈 예정
                 break
                 
             default:
-                print("잘못된 입력입니다. 1,2,3 중 하나의 번호를 입력해주세요.\n")
+                print("잘못된 입력입니다. 1,2,3 중 하나의 번호를 입력해주세요. \n")
                 continue
             }
             // === switch문 break ===
@@ -48,9 +48,9 @@ class BaseballGame {
     
 
     // startGame 함수: 게임 진행
-    func startGame() {
+    func startGame() -> Int{
         
-        print("< 게임을 시작합니다 >")
+        print("\n< 게임을 시작합니다 >")
         print("타자가 타석에 들어섭니다.")
         
         // 정답 만들고 저장해둠
@@ -91,7 +91,7 @@ class BaseballGame {
             // 3스트라이크면 게임 종료
             if strike == 3 {
                 print("스윙삼진! 게임이 종료됩니다.\n")
-                break
+                return attempt  //void -> Int 반환
             }
         }
     }
@@ -171,3 +171,4 @@ class BaseballGame {
     
     
 }
+
