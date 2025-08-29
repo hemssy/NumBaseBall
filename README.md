@@ -28,11 +28,11 @@ class 혹은 struct {
 
 ## 해결과정
 
-주어진 코드 뼈대에서 main.swift와 BaseballGame.swift를 분리하고 있음. BaseballGame에서 설계도(class)를 만들고, 메인에서 game 인스턴스를 만들어서 start 함수를 실행시키자.
+주어진 코드 뼈대에서 main.swift와 BaseballGame.swift를 분리하고 있음. ```BaseballGame```에서 설계도(class)를 만들고, 메인에서 ```game``` 인스턴스를 만들어서 ```start``` 함수를 실행시키자.
 
-뼈대코드를 다시 보면, class BaseballGame안에 start()와 makeAnswer()가 주어진다. start()에서는 answer에 makeAnswer()를 실행시켜서 만든 결과를 담는걸 보니, makeAnswer()에서 정답을 만들어서 answer를 리턴해줘야겠다.
+뼈대코드를 다시 보면, ```class BaseballGame```안에 ```start()```와 ```makeAnswer()```가 주어진다. ```start()```에서는 ```answer```에 ```makeAnswer()```를 실행시켜서 만든 결과를 담는걸 보니, ```makeAnswer()```에서 정답을 만들어서 ```answer```를 리턴해줘야겠다.
 
-1부터 9까지의 서로 다른 숫자 3개를 랜덤으로 뽑아야되는데, answer를 빈 Int 배열로 놓고,answer[0], answer[1], answer[2]로 랜덤숫자를 넣어준다.
+1부터 9까지의 서로 다른 숫자 3개를 랜덤으로 뽑아야되는데, ```answer```를 빈 Int 배열로 놓고, ```answer[0]```, ```answer[1]```, ```answer[2]```로 랜덤숫자를 넣어준다.
 
 
 ```swift
@@ -56,9 +56,9 @@ class BaseballGame{
 }
 ```
 
-이렇게 만들었는데, 조건을 다시 확인해보니 세자리는 서로 다른 숫자여야 한다. contains() 함수를 사용해서, if !answer.contains(num) 이면, answer에 append 해준다.
+이렇게 만들었는데, 조건을 다시 확인해보니 세자리는 서로 다른 숫자여야 한다. ```contains()``` 함수를 사용해서, ```f !answer.contains(num)``` 이면, ```answer```에 ```append``` 해준다.
 
-num 은 랜덤으로 뽑히고-> 중복 검사 과정을 통과하면 answer에 append 되고, answer에 담긴 개수가 3개가 될 때 answer를 return 한다.
+```num``` 은 랜덤으로 뽑히고-> 중복 검사 과정을 통과하면 ```answer```에 ```append``` 되고, ```answer```에 담긴 개수가 3개가 될 때 ```answer```를 ```return``` 한다.
 
 ## 완성 코드
 
@@ -86,3 +86,4 @@ class BaseballGame{
     
 }
 ```
+
