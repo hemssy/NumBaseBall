@@ -13,7 +13,7 @@ class RecordManager {
         
         //게임 0번 했을 때
         if records.isEmpty {
-            print("기록이 없습니다.")
+            print("기록이 없습니다. 메뉴로 돌아갑니다. \n")
             return
         }
         
