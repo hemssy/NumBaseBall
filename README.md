@@ -33,7 +33,7 @@ Xcode Command Line Tool 로 만든 콘솔 프로그램으로, Lv1부터 Lv6까�
 
 
 ---
-## Stacks 🐈
+## Stacks <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Black%20Cat.png" alt="Black Cat" width="25" height="25" />
 ### Environment
 <img src="https://img.shields.io/badge/Xcode-1575F9.svg?style=for-the-badge&logo=Xcode&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 
@@ -50,7 +50,7 @@ Xcode Command Line Tool 로 만든 콘솔 프로그램으로, Lv1부터 Lv6까�
 
 
 ---
-## 구현 포인트 ☑️
+## 구현 포인트 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/White%20Exclamation%20Mark.webp" alt="White Exclamation Mark" width="25" height="25" />
 
 ### 정답을 생성하는 ```makeAnswer()```
 - 빈 배열 ```answerArr``` 를 만들고, 첫자리는 1에서 9사이, 나머지 자리는 0에서 9사이 범위에서 ```Int.random(in:)``` 함수로 수를 뽑아 배열에 추가했습니다.
@@ -63,6 +63,7 @@ Xcode Command Line Tool 로 만든 콘솔 프로그램으로, Lv1부터 Lv6까�
 ### 사용자의 입력을 판정하는 ```ABS()```
 - 실제 야구경기에 사용되는 ABS(자동 볼 판정 시스템) 을 함수로 만들었습니다!
 - 사용자의 입력 ```guess``` 를 순회하면서 ```character``` 타입의 ```guess[i]``` 와 정답 배열 ```answer```의 ```answer[j]```를 비교합니다.
+
 
 
 
