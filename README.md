@@ -57,21 +57,22 @@ class 혹은 struct {
 
 드디어 게임메뉴가 생겼다! 메뉴에는 게임 시작하기, 게임 기록 보기, 종료하기 가 있고, 1번 게임 시작하기 메뉴 이동 로직을 만들었다.
 
-class BaseballGame 안에 nowRunning 변수를 만들어서, nowRunning이 true일 때 startMenu()를 실행한다.
+```class BaseballGame``` 안에 ```nowRunning``` 변수를 만들어서, ```nowRunning```이 ```true```일 때 ```startMenu()```를 실행한다.
 
 이번 레벨을 기점으로 BaseballGame.swift 파일의 코드구조를 정리헸다.
 
-class BaseballGame안에,
+```class BaseballGame```안에,
 
-startMenu(), startGame(), makeAnswer(), parseGuess(), ABS() 함수를 각각 분리해서, 메뉴에서 조작가능하도록 만들었다.
+```startMenu()```, ```startGame()```, ```makeAnswer()```, ```parseGuess()```, ```ABS()``` 함수를 각각 분리해서, 메뉴에서 조작가능하도록 만들었다.
 
 ## 해결과정
 
-뼈대코드를 보면 switch문을 사용해서 case1,2,3 으로 던져주고 있다.
+뼈대코드를 보면 ```switch```문을 사용해서 case1,2,3 으로 던져주고 있다.
 
-case에서 각각 함수를 호출하려면 게임진행 함수를 따로 빼야될 것 같아서, startGame() 함수를 만들었다. 나머지 로직은 동일하고, startMenu()의 case 1에서 startGame()을 불러줬다. 
+```case```에서 각각 함수를 호출하려면 게임진행 함수를 따로 빼야될 것 같아서, ```startGame()``` 함수를 만들었다. 나머지 로직은 동일하고, ```startMenu()```의 ```case``` 1에서 ```startGame()```을 불러줬다. 
 
-case 2,3은 아직 안만들었으니 break로 처리했다!
+```case``` 2,3은 아직 안만들었으니 ```break```로 처리했다!
+
 
 
 
