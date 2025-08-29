@@ -34,10 +34,11 @@ class BaseballGame {
                 
             case "3":
                 // 게임종료 함수 들어갈 예정
-                break
+                print("\n < 숫자 야구 게임을 종료합니다 >")
+                nowRunning = false
                 
             default:
-                print("잘못된 입력입니다. 1,2,3 중 하나의 번호를 입력해주세요. \n")
+                print("올바른 숫자를 입력해주세요! \n")
                 continue
             }
             // === switch문 break ===
