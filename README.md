@@ -45,8 +45,13 @@ Xcode Command Line Tool 로 만든 콘솔 프로그램으로, Lv1부터 Lv6까�
 
 ---
 ## 실행 화면
+
+![output-onlinegiftools](https://github.com/user-attachments/assets/71dc7429-4f1b-4937-b1c8-b07f5b7cb1f2)
+
+
 ---
 ## 구현 포인트
+
 
 
 
