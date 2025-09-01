@@ -156,14 +156,8 @@ class BaseballGame {
         for i in 0..<3 {
             if guess[i] == answer[i] {
                 strike += 1
-            } else {
-                // 자리 다르고 숫자만 맞는 경우
-                for j in 0..<3 {
-                    if guess[i] == answer[j] {
-                        ball += 1
-                        break
-                    }
-                }
+            } else if answer.contains(guess[i]) {
+                ball += 1
             }
         }
         
