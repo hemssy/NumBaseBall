@@ -1,34 +1,51 @@
-# Swift로 숫자야구 게임 만들기
+# [fix] Swift로 숫자야구 게임 만들기
 
-## 프로젝트 소개
-⚾️ 숫자야구 게임은 **두 명이 플레이하는 추리 게임**으로, **상대방이 설정한 3자리의 숫자를 맞추면 끝이 납니다.**
+## 변경 전
 
-각 자리의 숫자와 위치가 맞으면 스트라이크, 숫자만 맞고 위치가 다르면 볼로 ABS 함수에 의해 판정됩니다.
+```swift
+    func ABS(guess: [Int]) -> (Int, Int) {
+        var strike = 0
+        var ball = 0
+        
+        for i in 0..<3 {
+            if guess[i] == answer[i] {
+                strike += 1
+            } else {
+                // 자리 다르고 숫자만 맞는 경우
+                for j in 0..<3 {
+                    if guess[i] == answer[j] {
+                        ball += 1
+                        break
+                    }
+                }
+            }
+        }
+        
+        return (strike, ball)
+    }
+```
 
-**투수(컴퓨터)** 는 투구전략 ```answer```를 생각해놓고, **타자(사용자)** 가 투구전략 의도대로 3스트라이크를 기록하면 삼진아웃을 당하며 게임이 종료됩니다!
+## 변경 후
 
----
-## Stacks 🐈
-### Environment
-<img src="https://img.shields.io/badge/Xcode-1575F9.svg?style=for-the-badge&logo=Xcode&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
-
-### Development
-<img src="https://img.shields.io/badge/Swift-F05138.svg?style=for-the-badge&logo=swift&logoColor=white">   
-
-### OS
-<img src="https://img.shields.io/badge/macOS-000000.svg?style=for-the-badge&logo=apple&logoColor=white">
-
----
-## 실행 화면
----
-## 구현 포인트
-
-
-
+```swift
+    func ABS(guess: [Int]) -> (Int, Int) {
+        var strike = 0
+        var ball = 0
+        
+        for i in 0..<3 {
+            if guess[i] == answer[i] {
+                strike += 1
+            } else if answer.contains(guess[i]) {
+                ball += 1
+            }
+        }
+        
+        return (strike, ball)
+    }
+```
 
 
-
-
+contains 함수를 사용해서 볼 판정 구문의 else if를 간략화하였다.
 
 
 
